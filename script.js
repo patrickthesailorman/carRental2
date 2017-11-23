@@ -57,9 +57,12 @@ document.getElementById("reservationForm").onsubmit = function(event) {
 	if (!document.getElementById("confirmation").checked) {
 		alert("Please agree to terms");
 		return;
-	}
+	} 
 	var radios = document.getElementsByName("carType");
 	var carSelected = "";
+	firstName = document.getElementById("inputFirstName").value;
+	lastName = document.getElementById("inputLastName").value;
+	
 	for (var i = 0; i < radios.length; i++) {
 		if (radios[i].checked) {
 			carSelected = radios[i].value;
@@ -68,8 +71,13 @@ document.getElementById("reservationForm").onsubmit = function(event) {
 	}
 	if (carSelected == "") {
 		alert("Please Select a car.");
-		return;
-	}
-	firstName = document.getElementById("inputFirstName").value;
+		
+	} else if (firstName == "" || lastName == "") {
+		alert("all fields must be filled");
+	
+	} else if (!firstName == "" || !lastName == "") {
+	    customer = firstName + lastName;
+		document.getElementById("customer").innerHTML = customer;
 	alert(firstName + ", " + "You have reserved the " + Cars.types[parseInt(carSelected)].name + ".");
+	}
 }
