@@ -1,63 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=1.0" name="viewport">
+	<meta content="ie=edge" http-equiv="X-UA-Compatible">
+	<title>Document</title>
 </head>
 <body>
-    	<h1>Rent a car</h1>
-	<h3>Business Name:</h3>
-	<strong><p id="name"></p></strong>
-
-	<form id="reservationForm">
+	<h1>Rent a car</h1>
+	<h3>Business Name:</h3><strong></strong>
+	<p id="name"><strong></strong></p>
+	<form id="reservationForm" name="reservationForm">
 		Enter your first name: <input id="inputFirstName" name="firstName" type="text"><br>
 		<br>
 		Enter your last name: <input id="inputLastName" name="lastName" type="text"><br>
 		<br>
 		<hr>
-		 <div id="radialSection">
-            <label>Car Type</label><br>
-            
-            <!--<input id="radio" name="K type="radio" value="test"><label id="label">test</label>-->
-        </div>
-		<!--Select a car type: <select id="carType" name="carType" onchange="displayInfo()", "addRenter()">-->
-		<!--	<option value="Please select a vehicle">-->
-		<!--		Please select a vehicle-->
-		<!--	</option>-->
-		<!--	<option value="economyCar">-->
-		<!--		economyCar-->
-		<!--	</option>-->
-		<!--	<option value="midsizeCar">-->
-		<!--		midsizeCar-->
-		<!--	</option>-->
-		<!--</select><br>-->
-		<br>
-		<!--<button onclick="addRenter()" type="button">Enter</button><br>-->
+		<div id="radialSection">
+			<label>Car Type</label><br>
+		</div><br>
 		<h3>Submit to Rent car:</h3>
 		<div id="confirmationSection">
-            <input type="checkbox" name="confirm" id="confirmation"><label>I agree to Terms and Conditions</label>
-        </div>
-		<!--<input onclick ="rentacar()" type="submit">-->
-		<button type="submit">Submit</button>
-		</form>
-	
+			<input id="confirmation" name="confirm" type="checkbox"><label>I agree to Terms and Conditions</label>
+		</div><button type="submit">Submit</button>
+	</form>
 	<hr>
 	<div id="carInfo">
-    	<h2>Customer:</h2>
-    	<p id="customer"></p>
-    	<h2>Car Type:</h2>
-    	<p id="yourCarType"></p>
-    	<h4>Available: <span id="available" ></span></h4>
-    	<!--<p id="economyAvail"></p>-->
-    	<!--<p id="midsizeAvail"></p>-->
-    	<h4>Price: <span id="price"></span></h4>
-    	<!--<p id="price"></p>-->
-    	<!--<p id="price2"></p>-->
+		<h2>Customer:</h2>
+		<p id="customer"></p>
+		<h2>Car Type:</h2>
+		<p id="yourCarType"></p>
+		<h4>Available: <span id="available"></span></h4>
+		<h4>Price: <span id="price"></span></h4>
 	</div>
 	<script src="script.js">
 	</script>
-    
 </body>
 </html>
