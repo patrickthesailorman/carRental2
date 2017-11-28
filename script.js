@@ -1,13 +1,13 @@
 var Cars = {
 	name: 'Enterprise Rental Cars',
 	types: [{
-		name: 'economyCar',
+		name: 'Economy Car',
 		economyCars: 500,
 		carsBooked: 150,
 		available: 350,
 		price: 20,
 	}, {
-		name: 'midsizeCar',
+		name: 'Midsize Car',
 		midsizeCars: 500,
 		midsizeBooked: 100,
 		available: 400,
@@ -36,6 +36,8 @@ var customer = "";
 
 function displayDetails(Car) {
 	console.log(Car);
+	document.getElementById("customer").innerHTML = firstName + " " + lastName;
+	document.getElementById("yourCarType").innerHTML = Cars.types[Car].name;
 	document.getElementById("available").innerHTML = Cars.types[Car].available;
 	document.getElementById("price").innerHTML = Cars.types[Car].price;
 }
@@ -54,10 +56,7 @@ for (var i = 0; i < Cars.types.length; i++) {
 }
 document.getElementById("reservationForm").onsubmit = function(event) {
 	event.preventDefault();
-	if (!document.getElementById("confirmation").checked) {
-		alert("Please agree to terms");
-		return;
-	} 
+	
 	var radios = document.getElementsByName("carType");
 	var carSelected = "";
 	firstName = document.getElementById("inputFirstName").value;
@@ -69,11 +68,16 @@ document.getElementById("reservationForm").onsubmit = function(event) {
 			break;
 		}
 	}
-	if (carSelected == "") {
+	
+	if (firstName == "" || lastName == "") {
+		alert("all fields must be filled");
+		
+	} else if (carSelected == "") {
 		alert("Please Select a car.");
 		
-	} else if (firstName == "" || lastName == "") {
-		alert("all fields must be filled");
+	} else if (!document.getElementById("confirmation").checked) {
+		alert("Please agree to terms");
+		return;
 	
 	} else if (!firstName == "" || !lastName == "") {
 	    customer = firstName + lastName;
